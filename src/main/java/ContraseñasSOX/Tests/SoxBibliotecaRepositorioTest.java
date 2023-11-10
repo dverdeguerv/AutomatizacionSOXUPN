@@ -1,8 +1,7 @@
 package ContraseñasSOX.Tests;
 
-import ContraseñasSOX.Base.base;
+import ContraseñasSOX.Base.ClaseBase;
 import ContraseñasSOX.PageObjects.SOXIntranetBibliotecaPage;
-import ContraseñasSOX.PageObjects.SOXPayrollPage;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,12 +13,12 @@ public class SoxBibliotecaRepositorioTest {
 
     private WebDriver driver;
     SOXIntranetBibliotecaPage soxIntranetBibliotecaPage;
-    base base;
+    ClaseBase ClaseBase;
 
     @Before
     public void setUP() {
         soxIntranetBibliotecaPage = new SOXIntranetBibliotecaPage(driver);
-        base = new base(driver);
+        ClaseBase = new ClaseBase(driver);
 
         driver = soxIntranetBibliotecaPage.ConnectionWebDriverChrome();
         soxIntranetBibliotecaPage.getUrl("https://biblioteca.upn.edu.pe/");

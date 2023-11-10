@@ -10,18 +10,16 @@ import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
 import javax.imageio.ImageIO;
 import java.io.File;
-import java.sql.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class base {
+public class ClaseBase {
 
     private WebDriver driver;
 
-    public base(WebDriver driver) {
+    public ClaseBase(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -70,6 +68,7 @@ public class base {
 
     public void SendKeys(String inputText, By locator) {
 
+        driver.findElement(locator).clear();
         driver.findElement(locator).sendKeys(inputText);
     }
 

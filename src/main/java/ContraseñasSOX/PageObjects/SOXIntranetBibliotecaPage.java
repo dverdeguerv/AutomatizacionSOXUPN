@@ -1,12 +1,10 @@
 package ContraseñasSOX.PageObjects;
 
-import ContraseñasSOX.Base.base;
+import ContraseñasSOX.Base.ClaseBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import java.security.PublicKey;
-
-public class SOXIntranetBibliotecaPage extends base {
+public class SOXIntranetBibliotecaPage extends ClaseBase {
 
     public SOXIntranetBibliotecaPage(WebDriver driver) {
         super(driver);

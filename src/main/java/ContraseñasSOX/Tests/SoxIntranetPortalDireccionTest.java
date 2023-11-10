@@ -1,8 +1,7 @@
 package ContraseñasSOX.Tests;
 
-import ContraseñasSOX.Base.base;
+import ContraseñasSOX.Base.ClaseBase;
 import ContraseñasSOX.PageObjects.SOXIntranetPortalDireccionPage;
-import ContraseñasSOX.PageObjects.SOXPayrollPage;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,12 +13,12 @@ public class SoxIntranetPortalDireccionTest {
 
     private WebDriver driver;
     SOXIntranetPortalDireccionPage soxIntranetPortalDireccionPage;
-    base base;
+    ClaseBase ClaseBase;
 
     @Before
     public void setUP() {
         soxIntranetPortalDireccionPage = new SOXIntranetPortalDireccionPage(driver);
-        base = new base(driver);
+        ClaseBase = new ClaseBase(driver);
 
         driver = soxIntranetPortalDireccionPage.ConnectionWebDriverChrome();
         soxIntranetPortalDireccionPage.getUrl("https://intranet.upn.edu.pe/WebLogin/Bienvenido.aspx");

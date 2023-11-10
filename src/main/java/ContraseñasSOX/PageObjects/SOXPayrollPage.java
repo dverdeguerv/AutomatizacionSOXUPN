@@ -1,12 +1,10 @@
 package ContraseñasSOX.PageObjects;
 
-import ContraseñasSOX.Base.base;
+import ContraseñasSOX.Base.ClaseBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import java.sql.*;
-
-public class SOXPayrollPage extends base {
+public class SOXPayrollPage extends ClaseBase {
 
     public SOXPayrollPage(WebDriver driver) {
         super(driver);

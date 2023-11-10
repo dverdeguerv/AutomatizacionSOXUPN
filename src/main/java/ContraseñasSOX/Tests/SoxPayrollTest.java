@@ -1,6 +1,6 @@
 package ContraseñasSOX.Tests;
 
-import ContraseñasSOX.Base.base;
+import ContraseñasSOX.Base.ClaseBase;
 import ContraseñasSOX.PageObjects.SOXPayrollPage;
 import org.junit.After;
 import org.junit.Before;
@@ -13,12 +13,12 @@ public class SoxPayrollTest {
 
     private WebDriver driver;
     SOXPayrollPage soxPayrollPage;
-    base base;
+    ClaseBase ClaseBase;
 
     @Before
     public void setUP(){
         soxPayrollPage = new SOXPayrollPage(driver);
-        base = new base(driver);
+        ClaseBase = new ClaseBase(driver);
 
         driver = soxPayrollPage.ConnectionWebDriverChrome();
         soxPayrollPage.getUrl("https://payrollaws.upn.edu.pe:8443/psp/hcm92prd/?cmd=login&languageCd=ESP&");
