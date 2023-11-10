@@ -11,7 +11,9 @@ public class SOXIntranetPortalDireccionPage extends base {
     }
 
     //String grupo="Administrativos intranet";
-    String nombreWeb = "PortalDireccion";
+    String nombreWeb = "PortalIntranet";
+    String opcion = "";
+    String status = "";
     String userLoginText = "vva";
     String PassLoginText = "Cambio203@@@@";
 
@@ -25,10 +27,14 @@ public class SOXIntranetPortalDireccionPage extends base {
 
     //Main Portal Intranet
     By PageIsDisplayed = By.id("logo_UPN13");
-    By OpcionPortalDireccionMain = By.xpath("//*[@id=\"medium-contenedor\"]/li[4]/a/img");
+    By OpcionPortalDireccionMain = By.partialLinkText("Dirección");
+
+    //Reservas Online
+    By OpcionReservasOnline = By.partialLinkText("Reservas");
+    By ValidarReservasOnline = By.id("ddlTipoUsuario");
 
     //Localizadores Portal Direccion
-    By MainPortalDireccion=By.xpath("//*[@id=\"mainNav\"]/div[1]/a");
+    By MainPortalDireccion = By.xpath("//*[@id=\"mainNav\"]/div[1]/a");
 
 
     public void credencialesLogin() {
@@ -49,19 +55,38 @@ public class SOXIntranetPortalDireccionPage extends base {
         if (isDisplayed(PageIsDisplayed)) {
             click(OpcionPortalDireccionMain);
         } else {
-            String Status = "Fail";
-            screenShoot(Status, nombreWeb);
+            status = "Fail";
+            screenShoot(status, nombreWeb);
         }
     }
 
-    public void ValidarPortalMain(){
-        if (isDisplayed(MainPortalDireccion)){
-            String status="Pass";
-            screenShoot(nombreWeb,status);
+    public void ValidarPortalMain() {
+        opcion = "Direccion";
+        if (isDisplayed(MainPortalDireccion)) {
+            status = "Pass";
+            screenShoot(nombreWeb + "_" + opcion, status);
+        } else {
+
+            status = "Fail";
+            screenShoot(nombreWeb + "_" + opcion, status);
+        }
+    }
+
+    public void clickReservasOnline() {
+        click(OpcionReservasOnline);
+
+    }
+
+    public void ValidarReservasOnline(){
+        opcion="ReservasOnline";
+
+        if (isDisplayed(ValidarReservasOnline)){
+            status = "Pass";
+            screenShoot(nombreWeb + "_" + opcion, status);
         }else {
 
-            String status="Fail";
-            screenShoot(nombreWeb,status);
+            status="Fail";
+            screenShoot(nombreWeb + "_" + opcion, status);
         }
     }
 }

@@ -35,13 +35,23 @@ public class SoxIntranetPortalDireccionTest {
 
     public void tests() {
 
+        //Opcion Portal direccion
         soxIntranetPortalDireccionPage.credencialesLogin();
         soxIntranetPortalDireccionPage.clickLogin();
         soxIntranetPortalDireccionPage.ValidarIntranet();
-        soxIntranetPortalDireccionPage.clickPortalValidar();
+        //soxIntranetPortalDireccionPage.clickPortalValidar();
         driver.switchTo().window(driver.getWindowHandles().toArray()[1].toString());
         driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
         soxIntranetPortalDireccionPage.ValidarPortalMain();
+        driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
+
+        //Opcion ReservasOnline
+        soxIntranetPortalDireccionPage.clickReservasOnline();
+        driver.switchTo().window(driver.getWindowHandles().toArray()[2].toString());
+        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+        soxIntranetPortalDireccionPage.ValidarReservasOnline();
+
+
 
     }
 }
