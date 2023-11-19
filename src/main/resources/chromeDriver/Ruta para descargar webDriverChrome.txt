@@ -1,0 +1,3 @@
+https://chromedriver.chromium.org/downloads
+
+Se debe de verificar la version del navegador actual y en base a ello, descargar el driver, sino tendrás errores.
